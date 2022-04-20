@@ -91,6 +91,15 @@ public class Zadanie {
             }catch (IndexOutOfBoundsException ignored){ }
 
         }
+
+        int par =20;
+        if(random.nextInt(100)+1 >par) return b;
+        b.getItems().remove(random.nextInt(b.getItems().size()));
+        Item itemToAdd;
+        do{
+            itemToAdd=list.get(random.nextInt(list.size()));
+        }while(itemToAdd.getWeight()+b.getSumWeight()>maximumBackpackWeight);
+        b.addItem(itemToAdd);
         return b;
     }
     private Backpack takeFromList(){

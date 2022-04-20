@@ -51,6 +51,10 @@ public class Backpack {
     }
 
     public int getSumWeight() {
+        sumWeight=0;
+        for (Item item: items) {
+            sumWeight += item.getWeight();
+        }
         return sumWeight;
     }
 
